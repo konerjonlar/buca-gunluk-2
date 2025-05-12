@@ -1,0 +1,185 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --orange-color: #ff6f00;
+  --whatsapp-green: #25D366;
+  --instagram-pink: #E1306C;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+menu {
+  --size: 2.1rem;
+  --radius: 6rem;
+  --padding: .5rem;
+  --bg-color: rgba(255, 255, 255, 0.9);
+  --fg-color: rgba(0, 0, 0, 0.7);
+  --hi-color: #12192c;
+  font-size: 29px;
+  position: fixed;
+  bottom: var(--padding);
+  right: var(--padding);
+  margin: 30px;
+}
+
+menu > * {
+  position: absolute;
+  
+  display: grid;
+  place-content: center;
+  
+  border-radius: 50%;
+  font-size: 29px;
+  background: var(--bg-color);
+  color: var(--fg-color);
+  
+  text-decoration: none;
+  
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.6);
+}
+
+menu > .action {
+  --factor: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  right: calc(1.35 * var(--size));
+  bottom: calc(1.35 * var(--size));
+  
+  opacity: 0;
+  
+  transform: rotate(calc(-1 * var(--angle))) translateY(calc(-1 * var(--radius) * var(--factor))) rotate(var(--angle));
+  
+  transition: transform 250ms ease-in-out, opacity 250ms ease-in-out, box-shadow 250ms ease-in-out, color 250ms ease-in-out;
+}
+
+menu > .action:hover, menu > .trigger:hover {
+  color: var(--hi-color);
+  box-shadow: 0px 0px 0px 0.35rem rgba(0, 0, 0, 0.2);
+}
+
+menu.open > .action {
+  --factor: 1;
+  font-size: 20px;
+  opacity: 1;
+}
+
+menu > .action:nth-child(1) {
+  --angle: 0deg;
+  transition-delay: 0ms;
+}
+
+menu > .action:nth-child(2) {
+  --angle: 30deg;
+  transition-delay: 50ms;
+}
+
+menu > .action:nth-child(3) {
+  --angle: 60deg;
+  transition-delay: 100ms;
+}
+
+menu > .action:nth-child(4) {
+  --angle: 90deg;
+  transition-delay: 150ms;
+}
+
+menu > .trigger {
+  width: calc(1.9 * var(--size));
+  height: calc(1.9 * var(--size));
+  bottom: 0;
+  right: 0;
+  
+  font-size: 2rem;
+  transition: box-shadow 250ms ease-in-out, color 250ms ease-in-out;
+}
+
+menu > .trigger > i {
+  transition: transform 250ms ease-in-out;
+}
+
+menu.open > .trigger > i {
+  transform: rotate(-135deg);
+}
+
+menu > a{
+  height: max-content;
+  width: max-content;
+}
+
+/* Hero */
+.hero-slider {
+  position: relative;
+  height: 100vh;
+}
+.hero-slider .swiper-slide {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+.hero-content {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+/* Floating Buttons */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.floating-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+.floating-btn:hover {
+  transform: scale(1.1);
+}
+.phone-btn { background-color: var(--secondary-color); }
+.whatsapp-btn { background-color: var(--whatsapp-green); }
+.instagram-btn { background-color: var(--instagram-pink); }
+.scroll-top-btn {
+  background-color: #ffd700;
+  color: black;
+}
+
+/* Kartlar */
+.service-card {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Hakkımızda Bilgi Kutuları */
+.about-info-box {
+  background-color: #f4f4f4;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+}
