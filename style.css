@@ -13,6 +13,27 @@ body {
   padding: 0;
 }
 
+.card-title {
+  font-weight: 600;
+}
+
+.card ul li {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Responsive görsellik */
+@media (max-width: 767px) {
+  #odalar .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
 
 /* Hero */
 .hero-slider {
